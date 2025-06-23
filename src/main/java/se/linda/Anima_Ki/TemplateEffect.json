@@ -1,0 +1,82 @@
+{
+  "EffectName": "Attack Ability",
+  "PrimaryStat": "DEXTERITY",
+  "SecondaryStats": {
+    "DEXTERITY": 2,
+    "POWER": 2,
+    "PERCEPTION": 2
+  },
+  "Elements": [
+    "AIR",
+    "FIRE",
+    "WATER"
+  ],
+  "Levels": {
+    "1": {
+      "primaryCost": 2,
+      "secondaryCost": 4,
+      "mkCost": 5,
+      "maintainCost": 1
+    },
+    "2": {
+      "primaryCost": 3,
+      "secondaryCost": 5,
+      "mkCost": 5,
+      "maintainCost": 2
+    },
+    "3": {
+      "primaryCost": 4,
+      "secondaryCost": 6,
+      "mkCost": 10,
+      "maintainCost": 3
+    },
+    "4": {
+      "primaryCost": 5,
+      "secondaryCost": 8,
+      "mkCost": 15,
+      "maintainCost": 4
+    },
+    "5": {
+      "primaryCost": 8,
+      "secondaryCost": 11,
+      "mkCost": 20,
+      "maintainCost": 6
+    },
+    "6": {
+      "primaryCost": 12,
+      "secondaryCost": 15,
+      "mkCost": 25,
+      "maintainCost": 8
+    },
+    "7": {
+      "primaryCost": 14,
+      "secondaryCost": 10,
+      "mkCost": 30,
+      "maintainCost": 10
+    },
+    "8": {
+      "primaryCost": 18,
+      "secondaryCost": 22,
+      "mkCost": 35,
+      "maintainCost": 12
+    },
+    "9": {
+      "primaryCost": 22,
+      "secondaryCost": 26,
+      "mkCost": 40,
+      "maintainCost": 14
+    },
+    "10": {
+      "primaryCost": 26,
+      "secondaryCost": 32,
+      "mkCost": 45,
+      "maintainCost": 16
+    },
+    "11": {
+      "primaryCost": 30,
+      "secondaryCost": 36,
+      "mkCost": 50,
+      "maintainCost": 18
+    }
+  }
+}

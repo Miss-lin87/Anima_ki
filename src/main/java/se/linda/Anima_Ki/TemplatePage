@@ -1,0 +1,8 @@
+Slot for primary displayEffect
+    a Draggable box with the displayEffect
+        the box itself shows all the levels that are clickable to select the level
+
+Several slots for secondary effects
+    same thing, box that functions the same
+
+Display box that contents the total cost of everything
