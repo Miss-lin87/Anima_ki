@@ -7,10 +7,10 @@ import java.util.Map;
 
 public class TechniqueMakerTest {
     Map<Integer, EffectLevel> mockMap = Map.of(
-            1, new EffectLevel(1,2,3,4),
-            2, new EffectLevel(2,3,4,5),
-            3, new EffectLevel(3,4,5,6),
-            4, new EffectLevel(4,5,6,7));
+            1, new EffectLevel(1,1,2,3,4,0),
+            2, new EffectLevel(2,2,3,4,5,0),
+            3, new EffectLevel(3,3,4,5,6,0),
+            4, new EffectLevel(4,4,5,6,7,0));
 //    Effect mock = new Effect(
 //            "Test1",
 //            mockMap,

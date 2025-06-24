@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            border: 3px solid black;
+            width: 800px;
+            height: 400px;
+        }
+
+        .left-panel {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            border-right: 3px solid black;
+        }
+
+        .header {
+            height: 10%;
+            border-bottom: 3px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .form-container {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        .table-column {
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            text-align: center;
+        }
+
+        .table-row {
+            transition: background-color 0.2s ease;
+        }
+        .table-row:nth-child(even) {
+            background-color: #D6EEEE;
+        }
+        .table-row:nth-child(odd) {
+            background-color: #B2DAE8;
+        }
+        .table-row.selected {
+            outline: 3px solid red;
+        }
+        .table-row:hover {
+            cursor: pointer;
+            filter: brightness(90%);
+        }
+
+        .right-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: top;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="left-panel">
+        <div class="header" th:text="${EffectName}"></div>
+        <table>
+            <tr>
+                <th class="table-column" th:each="category : ${EffectCategories}" th:text="${category.getName()}"></th>
+            </tr>
+            <tr class="table-row" onclick="selectLevel(this)" th:each="level : ${EffectLevels}">
+                <td class="table-column" th:each="cost : ${level.getCosts()}" th:text="${cost}"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="right-panel">
+        <table>
+            <tr style="padding-bottom: 25px">
+                <th>Stat</th>
+                <th>Point</th>
+            </tr>
+            <tr th:each="stat : ${Stats}">
+                <td style="padding-bottom: 10px" th:text="${stat.getName()}"></td>
+                <td style="padding-bottom: 10px"><button th:onclick="|add('${stat.getName()}')|">+</button></td>
+                <td style="padding-bottom: 10px; text-align:center;" th:id="${stat.getName()}" th:text="0"></td>
+                <td style="padding-bottom: 10px"><button th:onclick="|sub('${stat.getName()}')|">-</button></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<button>Test</button>
+<script>
+    function selectLevel(row) {
+        document.querySelectorAll('.table-row').forEach(r => r.classList.remove('selected'));
+        row.classList.add('selected');
+    }
+
+    function add(statName) {
+        const statElement = document.getElementById(statName);
+        let currentValue = parseInt(statElement.textContent);
+        if (isNaN(currentValue)) currentValue = 0;
+        statElement.textContent = currentValue + 1;
+    }
+
+    function sub(statName) {
+        const statElement = document.getElementById(statName);
+        let currentValue = parseInt(statElement.textContent);
+        if (isNaN(currentValue)) currentValue = 0;
+        if (currentValue > 0) {
+            statElement.textContent = currentValue - 1;
+        }
+    }
+</script>
+</body>
+</html>

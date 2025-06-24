@@ -26,4 +26,8 @@ public class DisplayEffect {
         this.SecondaryStats = secondaryStats;
         this.Elements = elements;
     }
+
+    public EffectLevel[] getLevelArray() {
+        return Levels.values().toArray(new EffectLevel[0]);
+    }
 }
