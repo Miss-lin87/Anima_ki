@@ -1,4 +1,4 @@
-package se.linda.Anima_Ki.Database;
+package se.linda.Anima_Ki.database;
 
 import com.mongodb.ConnectionString;
 import com.mongodb.client.MongoClient;

@@ -1,4 +1,4 @@
-package se.linda.Anima_Ki.Enums;
+package se.linda.Anima_Ki.enums;
 
 public enum Elements {
     FIRE("Fire"),

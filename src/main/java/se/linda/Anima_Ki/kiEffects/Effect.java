@@ -1,25 +1,25 @@
-package se.linda.Anima_Ki.KiEffects;
+package se.linda.Anima_Ki.kiEffects;
 
 import lombok.Data;
-import se.linda.Anima_Ki.Enums.Elements;
-import se.linda.Anima_Ki.Enums.Stats;
+import se.linda.Anima_Ki.enums.Elements;
+import se.linda.Anima_Ki.enums.Stats;
 
 import java.util.List;
 import java.util.Map;
 
 @Data
-public class DisplayEffect {
+public class Effect {
     private String EffectName;
     private Map<Integer, EffectLevel> Levels;
     private Stats PrimaryStat;
     private Map<Stats,Integer> SecondaryStats;
     private List<Elements> Elements;
 
-    public DisplayEffect() {
+    public Effect() {
     }
 
-    public DisplayEffect(String effectName , Map<Integer, EffectLevel> levels,
-                         Stats primaryStat, Map<Stats, Integer> secondaryStats, List<Elements> elements) {
+    public Effect(String effectName , Map<Integer, EffectLevel> levels,
+                  Stats primaryStat, Map<Stats, Integer> secondaryStats, List<Elements> elements) {
         this.EffectName = effectName;
         this.Levels = levels;
         this.PrimaryStat = primaryStat;

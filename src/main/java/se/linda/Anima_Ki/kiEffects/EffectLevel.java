@@ -1,8 +1,6 @@
-package se.linda.Anima_Ki.KiEffects;
+package se.linda.Anima_Ki.kiEffects;
 
 import lombok.Data;
-
-import java.util.List;
 
 @Data
 public class EffectLevel {

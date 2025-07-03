@@ -1,5 +1,5 @@
-Slot for primary displayEffect
-    a Draggable box with the displayEffect
+Slot for primary effect
+    a Draggable box with the effect
         the box itself shows all the levels that are clickable to select the level
 
 Several slots for secondary effects

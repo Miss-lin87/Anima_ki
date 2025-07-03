@@ -45,7 +45,6 @@
             border-right: 1px solid black;
             text-align: center;
         }
-
         .table-row {
             transition: background-color 0.2s ease;
         }
@@ -71,6 +70,13 @@
             justify-content: top;
             gap: 10px;
         }
+
+        .stats-text {
+            display: flex;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
     </style>
 </head>
 
@@ -90,14 +96,15 @@
     <div class="right-panel">
         <table>
             <tr style="padding-bottom: 25px">
-                <th>Stat</th>
-                <th>Point</th>
+                <th style="text-align: center">Stats</th>
+                <th>Points</th>
+                <th style="text-align: center" id="CostPoints" th:text="0"></th>
             </tr>
             <tr th:each="stat : ${Stats}">
                 <td style="padding-bottom: 10px" th:text="${stat.getName()}"></td>
-                <td style="padding-bottom: 10px"><button th:onclick="|add('${stat.getName()}')|">+</button></td>
-                <td style="padding-bottom: 10px; text-align:center;" th:id="${stat.getName()}" th:text="0"></td>
-                <td style="padding-bottom: 10px"><button th:onclick="|sub('${stat.getName()}')|">-</button></td>
+                <td style="padding-bottom: 10px"><button th:id="${stat.getName()}" onclick="add(this.id)">+</button></td>
+                <td class="stats-text" th:id="num + ${stat.getName()}" th:text="0"></td>
+                <td style="padding-bottom: 10px"><button th:id="${stat.getName()}" onclick="sub(this.id)">-</button></td>
             </tr>
         </table>
     </div>
@@ -106,22 +113,38 @@
 <script>
     function selectLevel(row) {
         document.querySelectorAll('.table-row').forEach(r => r.classList.remove('selected'));
+        document.querySelectorAll('.stats-text').forEach(t => t.textContent = "0");
         row.classList.add('selected');
+        const costPointsElement = document.getElementById("CostPoints");
+        row.querySelectorAll('.table-column').forEach((cell, index) => {
+        if (index === 1) {
+                document.getElementById("CostPoints").textContent = cell.textContent;
+            }
+        });
     }
 
     function add(statName) {
-        const statElement = document.getElementById(statName);
+        const statElement = document.getElementById("num" + statName);
+        const costPointsElement = document.getElementById("CostPoints");
         let currentValue = parseInt(statElement.textContent);
         if (isNaN(currentValue)) currentValue = 0;
-        statElement.textContent = currentValue + 1;
+        if (parseInt(costPointsElement.textContent) <= 0) {
+            alert("No points left to add!");
+            return;
+        } else {
+            statElement.textContent = currentValue + 1;
+            costPointsElement.textContent = parseInt(costPointsElement.textContent) - 1;
+        }
     }
 
     function sub(statName) {
-        const statElement = document.getElementById(statName);
+        const statElement = document.getElementById("num" + statName);
+        const costPointsElement = document.getElementById("CostPoints");
         let currentValue = parseInt(statElement.textContent);
         if (isNaN(currentValue)) currentValue = 0;
         if (currentValue > 0) {
-            statElement.textContent = currentValue - 1;
+           statElement.textContent = currentValue - 1;
+           costPointsElement.textContent = parseInt(costPointsElement.textContent) + 1;
         }
     }
 </script>

@@ -2,7 +2,7 @@
   "EffectName": "Attack Ability",
   "PrimaryStat": "DEXTERITY",
   "SecondaryStats": {
-    "DEXTERITY": 2,
+    "AGILITY": 2,
     "POWER": 2,
     "PERCEPTION": 2
   },
