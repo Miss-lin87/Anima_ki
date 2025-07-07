@@ -1,0 +1,96 @@
+{
+  "EffectName": "Counterattack Ability",
+  "PrimaryStat": "DEXTERITY",
+  "SecondaryStats": {
+    "AGILITY": 2,
+    "POWER": 2,
+    "WILL": 3,
+    "STRENGTH": 2
+  },
+  "Elements": [
+    "AIR",
+    "EARTH",
+    "WATER"
+  ],
+  "Levels": {
+    "1": {
+      "level": 1,
+      "primaryCost": 1,
+      "secondaryCost": 2,
+      "mkCost": 5,
+      "maintainCost": 1,
+      "levelNeed": 0
+    },
+    "2": {
+      "level": 2,
+      "primaryCost": 2,
+      "secondaryCost": 4,
+      "mkCost": 5,
+      "maintainCost": 2,
+      "levelNeed": 0
+    },
+    "3": {
+        "level": 3,
+      "primaryCost": 3,
+      "secondaryCost": 5,
+      "mkCost": 10,
+      "maintainCost": 3
+    },
+    "4": {
+        "level": 4,
+      "primaryCost": 4,
+      "secondaryCost": 6,
+      "mkCost": 10,
+      "maintainCost": 4
+    },
+    "5": {
+        "level": 5,
+      "primaryCost": 6,
+      "secondaryCost": 9,
+      "mkCost": 15,
+      "maintainCost": 6
+    },
+    "6": {
+        "level": 6,
+      "primaryCost": 9,
+      "secondaryCost": 12,
+      "mkCost": 20,
+      "maintainCost": 8
+    },
+    "7": {
+        "level": 7,
+      "primaryCost": 12,
+      "secondaryCost": 15,
+      "mkCost": 25,
+      "maintainCost": 10
+    },
+    "8": {
+        "level": 8,
+      "primaryCost": 14,
+      "secondaryCost": 18,
+      "mkCost": 30,
+      "maintainCost": 12
+    },
+    "9": {
+        "level": 9,
+      "primaryCost": 18,
+      "secondaryCost": 22,
+      "mkCost": 35,
+      "maintainCost": 14
+    },
+    "10": {
+        "level": 10,
+      "primaryCost": 22,
+      "secondaryCost": 26,
+      "mkCost": 40,
+      "maintainCost": 16
+    },
+    "11": {
+      "level": 11,
+      "primaryCost": 26,
+      "secondaryCost": 32,
+      "mkCost": 45,
+      "maintainCost": 18
+    }
+  }
+}

@@ -5,6 +5,7 @@ import com.google.gson.stream.JsonReader;
 
 import java.io.*;
 
+//Class only for testing purposes, to read a template effect from a file
 public class EffectMaker {
     private final Gson gson = new Gson();
 
@@ -14,7 +15,7 @@ public class EffectMaker {
     public Effect test() {
         Effect temp;
         try {
-            File file = new File("src/main/java/se/linda/Anima_Ki/TemplateEffect.json");
+            File file = new File("src/main/java/se/linda/Anima_Ki/TemplateEffects/TemplateEffect.json");
             temp = gson.fromJson(new JsonReader(new FileReader(file)), Effect.class);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);

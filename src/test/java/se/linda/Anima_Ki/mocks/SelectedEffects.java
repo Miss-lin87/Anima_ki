@@ -12,6 +12,7 @@ public interface SelectedEffects {
     SelectedEffect effect1 = new SelectedEffect(
             "Effect1",
             maker.test(),
+            1,
             true,
             new HashMap<>(Map.of(Stats.AGILITY, 1,
                     Stats.DEXTERITY, 1,
@@ -21,6 +22,7 @@ public interface SelectedEffects {
     SelectedEffect effect2 = new SelectedEffect(
             "Effect2",
             maker.test(),
+            1,
             true,
             new HashMap<>(Map.of(Stats.AGILITY, 2,
                     Stats.DEXTERITY, 2,
@@ -30,6 +32,7 @@ public interface SelectedEffects {
     SelectedEffect effect3 = new SelectedEffect(
             "Effect3",
             maker.test(),
+            1,
             true,
             new HashMap<>(Map.of(Stats.AGILITY, 3,
                     Stats.DEXTERITY, 3,
@@ -39,6 +42,7 @@ public interface SelectedEffects {
     SelectedEffect effect4 = new SelectedEffect(
             "Effect4",
             maker.test(),
+            1,
             true,
             new HashMap<>(Map.of(Stats.AGILITY,4,
                     Stats.DEXTERITY, 4,
@@ -48,6 +52,7 @@ public interface SelectedEffects {
     SelectedEffect effect5 = new SelectedEffect(
             "Effect5",
             maker.test(),
+            1,
             true,
             new HashMap<>(Map.of(
                     Stats.AGILITY, 5,
